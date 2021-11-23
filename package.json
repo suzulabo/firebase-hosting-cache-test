@@ -1,0 +1,14 @@
+{
+  "name": "firebase-hosting-cache-test",
+  "private": true,
+  "engines": {
+    "node": "16",
+    "npm": "8"
+  },
+  "scripts": {
+    "start": "firebase emulators:start"
+  },
+  "devDependencies": {
+    "firebase-tools": "9.23.0"
+  }
+}
