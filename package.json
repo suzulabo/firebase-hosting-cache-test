@@ -6,7 +6,8 @@
     "npm": "8"
   },
   "scripts": {
-    "start": "firebase emulators:start"
+    "start": "firebase emulators:start",
+    "deploy": "firebase deploy"
   },
   "devDependencies": {
     "firebase-tools": "9.23.0"

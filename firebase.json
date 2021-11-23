@@ -4,10 +4,81 @@
   },
   "hosting": {
     "public": "public",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/functions",
+        "function": "httpsRequest"
+      },
+      {
+        "source": "/functionsCache*",
+        "function": "httpsRequest"
+      },
+      {
+        "source": "/functions404*",
+        "function": "httpsRequest"
+      },
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+
+    "headers": [
+      {
+        "source": "max-age.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=61"
+          }
+        ]
+      },
+      {
+        "source": "smax-age.html",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=62, s-maxage=30"
+          }
+        ]
+      },
+      {
+        "source": "functions404_max-age",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=65"
+          }
+        ]
+      },
+      {
+        "source": "functions404_smax-age",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=65, s-maxage=30"
+          }
+        ]
+      },
+      {
+        "source": "functions404Cache_max-age",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=66"
+          }
+        ]
+      },
+      {
+        "source": "functions404Cache_smax-age",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=67, s-maxage=30"
+          }
+        ]
+      }
     ]
   }
 }
