@@ -78,6 +78,24 @@
             "value": "public, max-age=67, s-maxage=30"
           }
         ]
+      },
+      {
+        "source": "functionsCache_set*",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=70, s-maxage=30"
+          }
+        ]
+      },
+      {
+        "source": "functionsCache_set_unset",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": ""
+          }
+        ]
       }
     ]
   }
